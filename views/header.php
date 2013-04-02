@@ -20,7 +20,7 @@
 ?>
 
 <link type="text/css" rel="stylesheet" href="<?php echo url::site();?>themes/panopticon/main/_main.css" />
-<script type="text/javascript" href="<?php echo url::site();?>themes/panopticon/main/main.js"></script>
+<script type="text/javascript" src="<?php echo url::site();?>themes/panopticon/main/main.js"></script>
 <?php
   }
 
