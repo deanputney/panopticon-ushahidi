@@ -33,7 +33,7 @@ div#logo {
 }
 
 #panel-wrapper.open {
-  
+  width:400px;
 }
 
 #panel-wrapper.closed {

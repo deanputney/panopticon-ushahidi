@@ -96,7 +96,7 @@
         </div> -->
         <!-- / mainmenu -->
         
-        <div id="panel-wrapper">
+        <div id="panel-wrapper" class="open">
           <ul id="panel-tabs">
             <li value="submit">Submit</li>
             <li value="pins">Pins</li>
