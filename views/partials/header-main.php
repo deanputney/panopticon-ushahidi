@@ -44,7 +44,7 @@
       
       <div id="panel-wrapper" class="open">
         <ul id="panel-tabs">
-          <li class="panel-submit"><a href="#submit">Submit</a></li><li class="panel-pins"><a href="#pins">Pins</a></li>
+          <li class="panel-submit"><a href="#submit">Submit</a></li><li class="panel-pins"><a href="#pins">Pins</a></li><li class="panel-contact"><a href="#contact">Contact</a></li>
         </ul>
         <div id="submit-panel" class="panel">
           <!-- submit incident -->
