@@ -38,7 +38,7 @@ div#logo {
           transition: width 0.2s ease-out;
 }
 
-#panel-wrapper.open {
+#panel-wrapper.open, .panel, .panel iframe {
   width:400px;
 }
 
