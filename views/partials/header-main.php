@@ -1,20 +1,3 @@
-<script>
-  function drawWindow(){
-    console.log('drawing #map to '+(window.innerHeight-$('#header_nav').height()))
-    $('#middle, #map, #panel-wrapper').css('height', window.innerHeight-$('#header_nav').height());
-  }
-  
-  $(document).ready(function(){
-    drawWindow();
-  });
-  
-  $(window).resize(function(){
-    drawWindow();
-  })
-</script>
-
-<link type="text/css" rel="stylesheet" href="<?php echo url::site();?>themes/panopticon/main/_main.css" />
-
 <?php echo $header_nav; ?>
 
 <!-- wrapper -->

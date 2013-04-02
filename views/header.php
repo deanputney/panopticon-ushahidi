@@ -13,10 +13,17 @@
   <?php
   // Action::header_scripts - Additional Inline Scripts from Plugins
   Event::run('ushahidi_action.header_scripts');
-  ?>
-</head>
 
+  // Main page only: Include these styles/scripts
+  if (count($uri_segments) == 0)
+  {
+?>
+
+<link type="text/css" rel="stylesheet" href="<?php echo url::site();?>themes/panopticon/main/_main.css" />
+<script type="text/javascript" href="<?php echo url::site();?>themes/panopticon/main/main.js"></script>
 <?php
+  }
+
   // Add a class to the body tag according to the page URI
 
   // we're on the home page
@@ -34,14 +41,11 @@
   {
     $body_class = "page-".$uri_segments[0]."-".$uri_segments[1];
   }
-?>
 
+?>
+</head>
 <body id="page" class="<?php echo $body_class; ?>">
-  <?php 
-  if (count($uri_segments) == 0){
-    include_once('partials/header-main.php');
-  }
-  else {
-    include_once('partials/header-page.php');
-  }
-  ?>
+<?php 
+  $header_file = (count($uri_segments) == 0) ? 'main' : 'page';
+  include_once('partials/header-' . $header_file . '.php');
+?>
