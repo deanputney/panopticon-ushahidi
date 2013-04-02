@@ -40,6 +40,48 @@ div#logo {
   
 }
 
+#panel-tabs {
+  list-style: none;
+  margin: 0;
+  display: block;
+  min-width: 100px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: 0 0;
+     -moz-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform:rotate(90deg);
+     -moz-transform:rotate(90deg);
+      -ms-transform:rotate(90deg);
+       -o-transform:rotate(90deg);
+}
+
+#panel-tabs li {
+  display: inline-block;
+  background: #eee;
+  margin: 0;
+
+  -webkit-transform:rotate(180deg);
+     -moz-transform:rotate(180deg);
+      -ms-transform:rotate(180deg);
+       -o-transform:rotate(180deg);
+}
+
+#panel-tabs li.active {
+  background: #fff;
+}
+
+#panel-tabs li a {
+  display: block;
+  padding: 5px 10px;
+  margin: 0;
+}
+
 div.submit-incident, div#searchbox {
   position:static;
 }

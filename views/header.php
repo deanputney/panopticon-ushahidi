@@ -98,8 +98,7 @@
         
         <div id="panel-wrapper" class="open">
           <ul id="panel-tabs">
-            <li value="submit">Submit</li>
-            <li value="pins">Pins</li>
+            <li class="panel-submit"><a href="#submit">Submit</a></li><li class="panel-pins"><a href="#pins">Pins</a></li>
           </ul>
           <div id="submit-panel" class="panel">
             <!-- submit incident -->
