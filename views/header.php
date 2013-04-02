@@ -101,12 +101,12 @@
             <li value="submit">Submit</li>
             <li value="pins">Pins</li>
           </ul>
-          <div id="submit-panel">
+          <div id="submit-panel" class="panel">
             <!-- submit incident -->
             <?php echo $submit_btn; ?>
             <!-- / submit incident -->
           </div>
-          <div id="pins-panel">
+          <div id="pins-panel" class="panel">
             <!-- searchbox -->
             <div id="searchbox">
 
