@@ -37,7 +37,6 @@
 ?>
 
 <body id="page" class="<?php echo $body_class; ?>">
-
   <?php 
   if (count($uri_segments) == 0){
     include_once('partials/header-main.php');
