@@ -82,7 +82,7 @@ div#logo {
   margin: 0;
 }
 
-div.submit-incident, div.searchbox {
+div.submit-incident, div#searchbox {
   position:static;
 }
 
