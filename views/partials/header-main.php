@@ -13,6 +13,8 @@
   })
 </script>
 
+<link type="text/css" rel="stylesheet" href="<?php echo url::site();?>themes/panopticon/main/_main.css" />
+
 <?php echo $header_nav; ?>
 
 <!-- wrapper -->
