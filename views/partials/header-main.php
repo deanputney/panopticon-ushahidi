@@ -67,6 +67,6 @@
           <!-- / searchbox -->
         </div>
         <div id="contact-panel" class="panel">
-          <iframe src="<?php echo url::site();?>/contact" frameborder="0" ></iframe>
+          <iframe src="<?php echo url::site();?>/contact?panel" frameborder="0" ></iframe>
         </div>
       </div>
