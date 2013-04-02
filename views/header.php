@@ -14,20 +14,6 @@
   // Action::header_scripts - Additional Inline Scripts from Plugins
   Event::run('ushahidi_action.header_scripts');
   ?>
-  <script>
-    function drawWindow(){
-      console.log('drawing #map to '+(window.innerHeight-$('#header_nav').height()))
-      $('#middle, #map, #panel-wrapper').css('height', window.innerHeight-$('#header_nav').height());
-    }
-    
-    $(document).ready(function(){
-      drawWindow();
-    });
-    
-    $(window).resize(function(){
-      drawWindow();
-    })
-  </script>
 </head>
 
 <?php
