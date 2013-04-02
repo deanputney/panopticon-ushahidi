@@ -30,6 +30,12 @@ div#logo {
   right:0;
   z-index:1;
   background:#ffffff;
+
+  -webkit-transition: width 0.2s ease-out;
+     -moz-transition: width 0.2s ease-out;
+      -ms-transition: width 0.2s ease-out;
+       -o-transition: width 0.2s ease-out;
+          transition: width 0.2s ease-out;
 }
 
 #panel-wrapper.open {
@@ -37,16 +43,14 @@ div#logo {
 }
 
 #panel-wrapper.closed {
-  
+  width:0;
 }
 
 #panel-tabs {
   list-style: none;
   margin: 0;
   display: block;
-  min-width: 100px;
-  color: #fff;
-  text-align: center;
+  width: 400px;
   text-transform: uppercase;
 
   position: absolute;
