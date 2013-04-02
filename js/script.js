@@ -1,4 +1,16 @@
+function drawWindow(){
+	console.log('drawing #map to '+(window.innerHeight-$('#header_nav').height()))
+	$('#middle, #map, #panel-wrapper').css('height', window.innerHeight-$('#header_nav').height());
+}
+
 jQuery(document).ready(function($) {
+
+// Draw map on page load
+drawWindow();
+    
+// Redraw map on resize
+$(window).resize(function(){ drawWindow(); });
+
 
 // Panels
 // ==========
@@ -17,13 +29,13 @@ if (activePanel.length) {
 }
 
 // Show panel on tab click
-$('#panel-tabs li').click(function() {
+$('#panel-tabs li a').click(function() {
 	$('#panel-wrapper .panel').hide(); // Hide all
 
-	var panelName = $(this).attr('class').match(/panel-(\w+)/);
+	var panelName = $(this).parent('li').attr('class').match(/panel-(\w+)/);
 	$('#' + panelName[1] + '-panel').show(); // Show clicked
 
-	$(this).find('a').blur(); // shh
+	$(this).blur(); // shh
 });
 
 
