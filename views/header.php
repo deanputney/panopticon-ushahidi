@@ -47,5 +47,6 @@
 <body id="page" class="<?php echo $body_class; ?>">
 <?php 
   $header_file = (count($uri_segments) == 0) ? 'main' : 'page';
+  if(isset($_GET['panel'])) $header_file = 'panel';
   include_once('partials/header-' . $header_file . '.php');
 ?>
