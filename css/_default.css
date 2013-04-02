@@ -1,0 +1,46 @@
+#page, div.rapidxwpr, #map {
+  width:100%;
+}
+
+div#header {
+  position: relative;
+  margin: 0 0 0 51px;
+  pointer-events:none;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+  background:none !important;
+}
+
+div#logo {
+  border: 0;
+  background: none;
+  padding: 0;
+  float: left;
+  margin: 14px 0 0 0;
+}
+
+#middle {
+  position:relative;
+}
+
+#panel-wrapper{
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+#map {
+  float:left;
+  position: absolute;
+  top: 0;
+  z-index:-1;
+/*  height:100%;*/
+}
+
+#mapStatus, div.slider-holder, #mapControls {
+  position:absolute;
+}
+
+#mapStatus {
+  right:0;
+  bottom:0;
+}
