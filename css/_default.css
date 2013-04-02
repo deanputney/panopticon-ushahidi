@@ -40,6 +40,10 @@ div#logo {
   
 }
 
+div.submit-incident, div.searchbox {
+  position:static;
+}
+
 #map {
   float:left;
   position: absolute;
