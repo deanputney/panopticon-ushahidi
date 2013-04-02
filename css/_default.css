@@ -8,6 +8,7 @@ div#header {
   pointer-events:none;
   filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
   background:none !important;
+  z-index:2;
 }
 
 div#logo {
@@ -20,6 +21,7 @@ div#logo {
 
 #middle {
   position:relative;
+  background:transparent !important;
 }
 
 #panel-wrapper{
@@ -32,7 +34,7 @@ div#logo {
   float:left;
   position: absolute;
   top: 0;
-  z-index:-1;
+  z-index:0;
 /*  height:100%;*/
 }
 
