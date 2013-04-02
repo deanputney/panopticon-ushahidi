@@ -121,4 +121,7 @@
             </div>
             <!-- / searchbox -->
           </div>
+          <div id="contact-panel" class="panel">
+            <iframe src="<?php echo url::site();?>/contact" frameborder="0" ></iframe>
+          </div>
         </div>
