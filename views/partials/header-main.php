@@ -1,3 +1,18 @@
+<script>
+  function drawWindow(){
+    console.log('drawing #map to '+(window.innerHeight-$('#header_nav').height()))
+    $('#middle, #map, #panel-wrapper').css('height', window.innerHeight-$('#header_nav').height());
+  }
+  
+  $(document).ready(function(){
+    drawWindow();
+  });
+  
+  $(window).resize(function(){
+    drawWindow();
+  })
+</script>
+
 <?php echo $header_nav; ?>
 
 <!-- wrapper -->
