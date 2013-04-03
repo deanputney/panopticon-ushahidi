@@ -1,6 +1,6 @@
 function drawWindow(){
 	console.log('drawing #map to '+(window.innerHeight-$('#header_nav').outerHeight()))
-	$('#middle, #map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight());
+	$('#middle, #map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight()-3);
 }
 
 
@@ -14,6 +14,8 @@ jQuery(document).ready(function($) {
 	
 	// Panels
 	// ==========
+
+	$('#mapStatus').addClass('panel-open');
 
 	// Hide all panels
 	$('#panel-wrapper .panel').hide();
@@ -45,9 +47,11 @@ jQuery(document).ready(function($) {
 		
 		if (wrapper.hasClass('closed')) { // Open panel
 			wrapper.removeClass('closed').addClass('open');
+			$('#mapStatus').addClass('panel-open');
 		} else if (li.hasClass('active')) { // Close panel
 			wrapper.removeClass('open').addClass('closed');
 			document.location.hash = 'panel-closed';
+			$('#mapStatus').removeClass('panel-open');
 			return;
 		}
 

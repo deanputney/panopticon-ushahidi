@@ -31,7 +31,9 @@ div#logo {
   right:0;
   z-index:1;
   background:#ffffff;
+}
 
+#panel-wrapper, #panel-wrapper .panel{
   -webkit-transition: width 0.2s ease-out;
      -moz-transition: width 0.2s ease-out;
       -ms-transition: width 0.2s ease-out;
@@ -45,8 +47,12 @@ div#logo {
   border:none;
 }
 
-#panel-wrapper.closed {
+#panel-wrapper.closed, #panel-wrapper.closed .panel {
   width:0;
+}
+
+#panel-wrapper.closed .panel {
+  overflow:hidden;
 }
 
 #panel-tabs {
@@ -108,4 +114,14 @@ div.submit-incident, div#searchbox {
 #mapStatus {
   right:0;
   bottom:0;
+
+  -webkit-transition: right 0.2s ease-out;
+     -moz-transition: right 0.2s ease-out;
+      -ms-transition: right 0.2s ease-out;
+       -o-transition: right 0.2s ease-out;
+          transition: right 0.2s ease-out;
+}
+
+#mapStatus.panel-open {
+  right:400px;
 }
