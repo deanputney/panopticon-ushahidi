@@ -43,9 +43,6 @@ jQuery(document).ready(function($) {
 
 		$(this).blur(); // shh
 		
-		// Hide all
-		$('#panel-wrapper .panel').hide();
-
 		if (wrapper.hasClass('closed')) { // Open panel
 			wrapper.removeClass('closed').addClass('open');
 		} else if (li.hasClass('active')) { // Close panel
@@ -53,6 +50,9 @@ jQuery(document).ready(function($) {
 			document.location.hash = 'panel-closed';
 			return;
 		}
+
+		// Hide all
+		$('#panel-wrapper .panel').hide();
 
 		$('#panel-tabs li.active').removeClass('active');
 
