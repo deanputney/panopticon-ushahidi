@@ -1,0 +1,12 @@
+body {
+	background: #ffffff;
+}
+
+.big-block {
+	padding:10px;
+}
+
+.report_right, .report_left {
+	width:380px;
+	margin:0;
+}

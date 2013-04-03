@@ -47,9 +47,7 @@
           <li class="panel-submit"><a href="#submit">Submit</a></li><li class="panel-pins"><a href="#pins">Pins</a></li><li class="panel-contact"><a href="#contact">Contact</a></li>
         </ul>
         <div id="submit-panel" class="panel">
-          <!-- submit incident -->
-          <?php echo $submit_btn; ?>
-          <!-- / submit incident -->
+          <iframe src="<?php echo url::site();?>reports/submit?panel" frameborder="0" ></iframe>
         </div>
         <div id="pins-panel" class="panel">
           <!-- searchbox -->
@@ -67,6 +65,6 @@
           <!-- / searchbox -->
         </div>
         <div id="contact-panel" class="panel">
-          <iframe src="<?php echo url::site();?>/contact?panel" frameborder="0" ></iframe>
+          <iframe src="<?php echo url::site();?>contact?panel" frameborder="0" ></iframe>
         </div>
       </div>

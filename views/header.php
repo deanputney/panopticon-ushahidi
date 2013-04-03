@@ -23,6 +23,11 @@
 <script type="text/javascript" src="<?php echo url::site();?>themes/panopticon/main/main.js"></script>
 <?php
   }
+  if(isset($_GET['panel'])){
+?>
+<link type="text/css" rel="stylesheet" href="<?php echo url::site();?>themes/panopticon/_panel.css" />
+<?php
+  }
 
   // Add a class to the body tag according to the page URI
 
