@@ -1,6 +1,6 @@
 function drawWindow(){
-	console.log('drawing #map to '+(window.innerHeight-$('#header_nav').height()))
-	$('#middle, #map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').height());
+	console.log('drawing #map to '+(window.innerHeight-$('#header_nav').outerHeight()))
+	$('#middle, #map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight());
 }
 
 

@@ -1,5 +1,6 @@
 #page, div.rapidxwpr, #map {
   width:100%;
+  border:none;
 }
 
 div#header {
@@ -39,7 +40,9 @@ div#logo {
 }
 
 #panel-wrapper.open, .panel, .panel iframe {
+  position:absolute;
   width:400px;
+  border:none;
 }
 
 #panel-wrapper.closed {
