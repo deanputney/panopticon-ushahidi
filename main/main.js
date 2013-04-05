@@ -2,8 +2,8 @@ function drawWindow(){
 	console.log('drawing #map to '+(window.innerHeight-$('#header_nav').outerHeight()))
 	$('#middle, #map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight()-3);
 	$('#map.panel-open').css('width', window.innerWidth-400);
+	map.resize();
 }
-
 
 jQuery(document).ready(function($) {
 	
@@ -57,6 +57,7 @@ jQuery(document).ready(function($) {
 			wrapper.removeClass('open').addClass('closed');
 			document.location.hash = 'panel-closed';
 			$('#map').css('width', '100%');
+			map.resize();
 			$('#mapStatus, #map').removeClass('panel-open');
 			return;
 		}
