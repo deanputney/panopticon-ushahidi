@@ -107,11 +107,11 @@ div.submit-incident, div#searchbox {
 /*  height:100%;*/
 }
 
-#mapStatus, div.slider-holder, #mapControls {
+#mapStatus, #mapControls {
   position:absolute;
 }
 
-#mapStatus {
+#mapStatus, #mapControls {
   right:0;
   bottom:0;
 
@@ -122,6 +122,11 @@ div.submit-incident, div#searchbox {
           transition: right 0.2s ease-out;
 }
 
-#mapStatus.panel-open {
+#mapStatus.panel-open, #mapControls.panel-open {
   right:400px;
+}
+
+#mapControls {
+	bottom:20px;
+	margin-right:10px;
 }

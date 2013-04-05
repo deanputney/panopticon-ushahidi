@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 	// Panels
 	// ==========
 
-	$('#mapStatus').addClass('panel-open');
+	$('#mapStatus, #mapControls').addClass('panel-open');
 
 	// Hide all panels
 	$('#panel-wrapper .panel').hide();
@@ -51,14 +51,14 @@ jQuery(document).ready(function($) {
 		
 		if (wrapper.hasClass('closed')) { // Open panel
 			wrapper.removeClass('closed').addClass('open');
-			$('#mapStatus, #map').addClass('panel-open');
+			$('#mapStatus, #mapControls, #map').addClass('panel-open');
 			setTimeout('drawWindow();', 200);
 		} else if (li.hasClass('active')) { // Close panel
 			wrapper.removeClass('open').addClass('closed');
 			document.location.hash = 'panel-closed';
 			$('#map').css('width', '100%');
 			map.resize();
-			$('#mapStatus, #map').removeClass('panel-open');
+			$('#mapStatus, #mapControls, #map').removeClass('panel-open');
 			return;
 		}
 
