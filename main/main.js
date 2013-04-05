@@ -1,10 +1,14 @@
 function drawWindow(){
 	console.log('drawing #map to '+(window.innerHeight-$('#header_nav').outerHeight()))
 	$('#middle, #map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight()-3);
+	$('#map.panel-open').css('width', window.innerWidth-400);
 }
 
 
 jQuery(document).ready(function($) {
+	
+	if(!$('#panel-wrapper').hasClass('closed')) $('#map').addClass('panel-open');
+	
   // Draw map on page load
   drawWindow();
     
@@ -47,11 +51,13 @@ jQuery(document).ready(function($) {
 		
 		if (wrapper.hasClass('closed')) { // Open panel
 			wrapper.removeClass('closed').addClass('open');
-			$('#mapStatus').addClass('panel-open');
+			$('#mapStatus, #map').addClass('panel-open');
+			setTimeout('drawWindow();', 200);
 		} else if (li.hasClass('active')) { // Close panel
 			wrapper.removeClass('open').addClass('closed');
 			document.location.hash = 'panel-closed';
-			$('#mapStatus').removeClass('panel-open');
+			$('#map').css('width', '100%');
+			$('#mapStatus, #map').removeClass('panel-open');
 			return;
 		}
 
