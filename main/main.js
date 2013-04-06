@@ -40,12 +40,14 @@ jQuery(document).ready(function($) {
 		activePanel.addClass('active');
 		var panelName = activePanel.attr('class').match(/panel-(\w+)/);
 		$('#' + panelName[1] + '-panel').show(); // Show active
+		if(panelName[1] != 'submit') $('#reportMap').hide();
 	}
 
 	// Hide panel if #panel-closed
 	if (document.location.hash == '#panel-closed')
 		$('#panel-wrapper').removeClass('open').addClass('closed');
-
+		
+		
 	// Show panel on tab click
 	$('#panel-tabs li a').click(function() {
 		var li      = $(this).parent('li'),
@@ -74,6 +76,11 @@ jQuery(document).ready(function($) {
 
 		panelName = li.attr('class').match(/panel-(\w+)/);
 		$('#' + panelName[1] + '-panel').show(); // Show clicked
+		if(panelName[1] == 'submit'){ 
+			$('#reportMap').show();
+		} else {
+			$('#reportMap').hide();
+		}
 		$('#panel-tabs li.panel-' + panelName[1]).addClass('active');
 	});
 
