@@ -2,7 +2,12 @@ function drawWindow(){
 	console.log('drawing big-maps to '+(window.innerHeight-$('#header_nav').outerHeight()))
 	$('#middle, .big-map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight()-3);
 	$('.big-map.panel-open').css('width', window.innerWidth-400);
+	updateMapsSize();
+}
+
+function updateMapsSize(){
 	map.resize();
+	if(frames[0].map) frames[0].map.updateSize();
 }
 
 jQuery(document).ready(function($) {
@@ -57,7 +62,7 @@ jQuery(document).ready(function($) {
 			wrapper.removeClass('open').addClass('closed');
 			document.location.hash = 'panel-closed';
 			$('.big-map').css('width', '100%');
-			map.resize();
+			updateMapsSize();
 			$('#mapStatus, #mapControls, .big-map').removeClass('panel-open');
 			return;
 		}
