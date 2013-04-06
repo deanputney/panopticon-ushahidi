@@ -1,5 +1,5 @@
 <!-- map -->
-<div class="map" id="map"></div>
+<div class="map big-map" id="map"></div>
 <div style="clear:both;"></div>
 <div id="mapStatus">
 	<div id="mapScale" style="border-right: solid 1px #999"></div>
@@ -9,3 +9,7 @@
 </div>
 <div style="clear:both;"></div>
 <!-- / map -->
+
+<!-- report submission map -->
+<div id="reportMap" class="report_map big-map"></div>
+<!-- / report submission map -->

@@ -7,5 +7,3 @@
     <div id="mapControls">
       <?php echo $div_timeline; ?>
     </div>
-  
-  

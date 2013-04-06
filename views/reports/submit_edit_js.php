@@ -80,7 +80,9 @@
 			};
 			
 			// Now initialise the map
-			map = new OpenLayers.Map('divMap', options);
+			// map = new OpenLayers.Map('divMap', options);
+			$('<div />').attr({ id: 'reportMap' }).appendTo(window.parent.$('#middle'));
+			map = new OpenLayers.Map(parent.document.getElementById('reportMap'), options);
 
 			<?php echo map::layers_js(FALSE); ?>
 			map.addLayers(<?php echo map::layers_array(FALSE); ?>);

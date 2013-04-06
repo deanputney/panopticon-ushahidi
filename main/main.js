@@ -1,13 +1,13 @@
 function drawWindow(){
-	console.log('drawing #map to '+(window.innerHeight-$('#header_nav').outerHeight()))
-	$('#middle, #map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight()-3);
-	$('#map.panel-open').css('width', window.innerWidth-400);
+	console.log('drawing big-maps to '+(window.innerHeight-$('#header_nav').outerHeight()))
+	$('#middle, .big-map, #panel-wrapper, .panel, .panel iframe').css('height', window.innerHeight-$('#header_nav').outerHeight()-3);
+	$('.big-map.panel-open').css('width', window.innerWidth-400);
 	map.resize();
 }
 
 jQuery(document).ready(function($) {
 	
-	if(!$('#panel-wrapper').hasClass('closed')) $('#map').addClass('panel-open');
+	if(!$('#panel-wrapper').hasClass('closed')) $('.big-map').addClass('panel-open');
 	
   // Draw map on page load
   drawWindow();
@@ -51,14 +51,14 @@ jQuery(document).ready(function($) {
 		
 		if (wrapper.hasClass('closed')) { // Open panel
 			wrapper.removeClass('closed').addClass('open');
-			$('#mapStatus, #mapControls, #map').addClass('panel-open');
+			$('#mapStatus, #mapControls, .big-map').addClass('panel-open');
 			setTimeout('drawWindow();', 200);
 		} else if (li.hasClass('active')) { // Close panel
 			wrapper.removeClass('open').addClass('closed');
 			document.location.hash = 'panel-closed';
-			$('#map').css('width', '100%');
+			$('.big-map').css('width', '100%');
 			map.resize();
-			$('#mapStatus, #mapControls, #map').removeClass('panel-open');
+			$('#mapStatus, #mapControls, .big-map').removeClass('panel-open');
 			return;
 		}
 
