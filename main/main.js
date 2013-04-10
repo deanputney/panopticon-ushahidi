@@ -52,7 +52,8 @@ jQuery(document).ready(function($) {
 	$('#panel-tabs li a').click(function() {
 		var li      = $(this).parent('li'),
 			wrapper = $('#panel-wrapper'),
-			panelName;
+			panelName,
+			lastPanel;
 
 		$(this).blur(); // shh
 		
@@ -72,8 +73,7 @@ jQuery(document).ready(function($) {
 		// Hide all
 		$('#panel-wrapper .panel').hide();
 
-		$('#panel-tabs li.active').removeClass('active');
-
+		lastPanel = $('#panel-tabs li.active').removeClass('active').attr('class').match(/panel-(\w+)/);
 		panelName = li.attr('class').match(/panel-(\w+)/);
 		$('#' + panelName[1] + '-panel').show(); // Show clicked
 		if(panelName[1] == 'submit'){ 
@@ -82,6 +82,22 @@ jQuery(document).ready(function($) {
 			$('#reportMap').hide();
 		}
 		$('#panel-tabs li.panel-' + panelName[1]).addClass('active');
+
+		console.log('Hiding '+lastPanel[1]+' and showing '+panelName[1]);
+		if (panelName[1] == 'submit') {
+			if (map && window.reports.map) {
+				window.reports.map.setCenter([map._olMap.center.lon, map._olMap.center.lat], map._olMap.zoom);
+				// Is this needed?
+				// window.reports.map.moveTo(map._olMap.center, map._olMap.zoom);
+				console.log('Trying to re-center Reports map');
+			} else {
+				console.log('lol nope');
+			}
+		} else if (lastPanel[1] == 'submit') {
+			map.setCenter([window.reports.map.center.lon, window.reports.map.center.lat], window.reports.map.zoom);
+			console.log('Trying to re-center Main map');
+		}
+
 	});
 
 
