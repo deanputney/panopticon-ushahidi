@@ -10,6 +10,23 @@ function updateMapsSize(){
 	if(frames[0].map) frames[0].map.updateSize();
 }
 
+function managePanelControls(panelName){
+	switch(panelName) {
+		case 'submit':
+			$('#reportMap').show();
+			$('#mapControls').hide();
+			break;
+		case 'pins':
+			$('#reportMap').hide();
+			$('#mapControls').show();
+			break;
+		default:
+			$('#reportMap').hide();
+			$('#mapControls').show();
+			break;
+	}
+}
+
 jQuery(document).ready(function($) {
 	
 	if(!$('#panel-wrapper').hasClass('closed')) $('.big-map').addClass('panel-open');
@@ -40,7 +57,7 @@ jQuery(document).ready(function($) {
 		activePanel.addClass('active');
 		var panelName = activePanel.attr('class').match(/panel-(\w+)/);
 		$('#' + panelName[1] + '-panel').show(); // Show active
-		if(panelName[1] != 'submit') $('#reportMap').hide();
+		managePanelControls(panelName[1]);
 	}
 
 	// Hide panel if #panel-closed
@@ -76,11 +93,7 @@ jQuery(document).ready(function($) {
 
 		panelName = li.attr('class').match(/panel-(\w+)/);
 		$('#' + panelName[1] + '-panel').show(); // Show clicked
-		if(panelName[1] == 'submit'){ 
-			$('#reportMap').show();
-		} else {
-			$('#reportMap').hide();
-		}
+		managePanelControls(panelName[1]);
 		$('#panel-tabs li.panel-' + panelName[1]).addClass('active');
 	});
 
