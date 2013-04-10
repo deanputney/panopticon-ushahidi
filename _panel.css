@@ -2,6 +2,10 @@ body {
 	background: #ffffff;
 }
 
+body.page-reports {
+	margin-top: 50px;
+}
+
 .big-block {
 	padding:10px;
 }
@@ -9,4 +13,40 @@ body {
 .report_right, .report_left {
 	width:380px;
 	margin:0;
+}
+.report_right {
+	width:355px;
+}
+
+#reports-box {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.rb_nav-controls {
+	height: 70px;
+}
+
+.rb_nav-controls .link-toggle .next-page {
+	float: right;
+	margin-right: 10px;
+}
+
+.rb_nav-controls td.last {
+	width: 102px;
+}
+
+#rb_list-view .rb_report {
+	overflow: hidden;
+	min-height: 130px;
+}
+
+.r_details {
+	margin-left: 10px;
+}
+
+#filters-box {
+	float: none;
+	margin: 0;
+	width: auto;
 }

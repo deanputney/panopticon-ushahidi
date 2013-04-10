@@ -13,6 +13,10 @@
  */
 ?>
 		<!-- Top reportbox section-->
+<?php
+function reportBoxPaginator($stats_breadcrumb, $pagination, $previous_page, $next_page) {
+	//global $stats_breadcrumb, $pagination, $previous_page, $next_page;
+	?>
 		<div class="rb_nav-controls r-5">
 			<table border="0" cellspacing="0" cellpadding="0">
 				<tr>
@@ -22,18 +26,24 @@
 							<li><a href="#rb_map-view" class="map"><?php echo Kohana::lang('ui_main.map'); ?></a></li>
 						</ul>
 					</td>
+					<td class="last"><?php echo $stats_breadcrumb; ?></td>
+				</tr>
+				<tr>
 					<td><?php echo $pagination; ?></td>
-					<td><?php echo $stats_breadcrumb; ?></td>
 					<td class="last">
 						<ul class="link-toggle lt-icons-only">
 							<?php //@todo Toggle the status of these links depending on the current page ?>
-							<li><a href="#page_<?php echo $previous_page; ?>" class="prev"><?php echo Kohana::lang('ui_main.previous'); ?></a></li>
-							<li><a href="#page_<?php echo $next_page; ?>" class="next"><?php echo Kohana::lang('ui_main.next'); ?></a></li>
+							<li class="prev-page"><a href="#page_<?php echo $previous_page; ?>" class="prev"><?php echo Kohana::lang('ui_main.previous'); ?></a></li>
+							<li class="next-page"><a href="#page_<?php echo $next_page; ?>" class="next"><?php echo Kohana::lang('ui_main.next'); ?></a></li>
 						</ul>
 					</td>
 				</tr>
 			</table>
 		</div>
+<?php
+}
+reportBoxPaginator($stats_breadcrumb, $pagination, $previous_page, $next_page);
+?>
 		<!-- /Top reportbox section-->
 		
 		<!-- Report listing -->
@@ -152,26 +162,6 @@
 		<!-- /Report listing -->
 		
 		<!-- Bottom paginator -->
-		<div class="rb_nav-controls r-5">
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td>
-						<ul class="link-toggle report-list-toggle lt-icons-and-text">
-							<li class="active"><a href="#rb_list-view" class="list"><?php echo Kohana::lang('ui_main.list'); ?></a></li>
-							<li><a href="#rb_map-view" class="map"><?php echo Kohana::lang('ui_main.map'); ?></a></li>
-						</ul>
-					</td>
-					<td><?php echo $pagination; ?></td>
-					<td><?php echo $stats_breadcrumb; ?></td>
-					<td class="last">
-						<ul class="link-toggle lt-icons-only">
-							<?php //@todo Toggle the status of these links depending on the current page ?>
-							<li><a href="#page_<?php echo $previous_page; ?>" class="prev"><?php echo Kohana::lang('ui_main.previous'); ?></a></li>
-							<li><a href="#page_<?php echo $next_page; ?>" class="next"><?php echo Kohana::lang('ui_main.next'); ?></a></li>
-						</ul>
-					</td>
-				</tr>
-			</table>
-		</div>
+		<?php reportBoxPaginator($stats_breadcrumb, $pagination, $previous_page, $next_page); ?>
 		<!-- /Bottom paginator -->
 	        

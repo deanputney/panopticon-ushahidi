@@ -95,8 +95,18 @@ div#logo {
   margin: 0;
 }
 
+.panel {
+  position: relative;
+}
+
 div.submit-incident, div#searchbox {
   position:static;
+}
+
+div#searchbox {
+  position: absolute;
+  left: 0;
+  z-index: 1001;
 }
 
 #map, #reportMap, .big-map {
