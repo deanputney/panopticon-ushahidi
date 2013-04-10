@@ -49,21 +49,7 @@
         <div id="submit-panel" class="panel">
           <iframe name="reports" src="<?php echo url::site();?>reports/submit?panel" frameborder="0" ></iframe>
         </div>
-        <div id="pins-panel" class="panel">
-          <!-- searchbox -->
-          <div id="searchbox">
-
-            <!-- languages -->
-            <?php echo $languages;?>
-            <!-- / languages -->
-
-            <!-- searchform -->
-            <?php echo $search; ?>
-            <!-- / searchform -->
-
-          </div>
-          <!-- / searchbox -->
-          
+        <div id="pins-panel" class="panel">          
           <iframe src="<?php echo url::site();?>reports?panel" frameborder="0" ></iframe>
         </div>
         <div id="contact-panel" class="panel">
