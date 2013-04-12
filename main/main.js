@@ -14,14 +14,17 @@ function managePanelControls(panelName){
 	switch(panelName) {
 		case 'submit':
 			$('#reportMap').show();
+			$('#mapFilters').hide();
 			$('#mapControls').hide();
 			break;
 		case 'pins':
 			$('#reportMap').hide();
+			$('#mapFilters').show();
 			$('#mapControls').show();
 			break;
 		default:
 			$('#reportMap').hide();
+			$('#mapFilters').show();
 			$('#mapControls').show();
 			break;
 	}
