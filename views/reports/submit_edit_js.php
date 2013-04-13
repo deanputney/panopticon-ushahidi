@@ -242,6 +242,9 @@
 			highlightCtrl.activate();
 			selectCtrl.activate();
 			
+			// Redraw the map on initial load, because it should be centered via main,js
+			map.baseLayer.redraw();
+
 			/**
 			 * Hack to make sure selectControl always works 
 			 *

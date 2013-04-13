@@ -96,17 +96,12 @@ jQuery(document).ready(function($) {
 		lastPanel = $('#panel-tabs li.active').removeClass('active').attr('class').match(/panel-(\w+)/);
 		panelName = li.attr('class').match(/panel-(\w+)/);
 
-		// console.log('Hiding '+lastPanel[1]+' and showing '+panelName[1]);
 		if (panelName[1] == 'submit') {
 			if (map && window.reports.map) {
 				window.reports.map.setCenter([map._olMap.center.lon, map._olMap.center.lat], map._olMap.zoom);
-				console.log('Trying to re-center Reports map');
-			} else {
-				console.log('Maps don\'t exist');
 			}
 		} else if (lastPanel[1] == 'submit') {
 			map._olMap.setCenter([window.reports.map.center.lon, window.reports.map.center.lat], window.reports.map.zoom);
-			console.log('Trying to re-center Main map');
 		}
 
 		$('#' + panelName[1] + '-panel').show(); // Show clicked
