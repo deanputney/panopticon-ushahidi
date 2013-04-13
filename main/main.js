@@ -119,7 +119,7 @@ jQuery(document).ready(function($) {
 
 	$('#map')
 		.observe('childlist', '#chicken', function(record) {
-		$('#chicken .infowindow_meta a:first').click(function() {
+		$('#chicken .infowindow_meta a:first, #chicken, .infowindow_list a:first').click(function() {
 			$('#panel-tabs .panel-info a').css({ display: 'block' }).click();
 			$('#info-panel iframe').attr({
 				src: $(this).attr('href') + '?panel'
