@@ -144,3 +144,16 @@ div#searchbox {
 	bottom:20px;
 	margin-right:10px;
 }
+
+#panel-tabs li.panel-info a {
+  display: none;
+}
+
+#info-close {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  z-index: 1000;
+}
