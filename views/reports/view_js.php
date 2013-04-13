@@ -136,12 +136,12 @@ jQuery(window).load(function() {
 
 
 	// Initialize the map
-	var map = new Ushahidi.Map('map', mapConfig);
-	map.addLayer(Ushahidi.GEOJSON, {
-		name: "Single Report",
-		url: "<?php echo 'json/single/'.$incident_id; ?>",
-		styleMap: styleMap
-	});
+	// var map = new Ushahidi.Map('map', mapConfig);
+	// map.addLayer(Ushahidi.GEOJSON, {
+	// 	name: "Single Report",
+	// 	url: "<?php echo 'json/single/'.$incident_id; ?>",
+	// 	styleMap: styleMap
+	// });
 	
 	// Ajax Validation for the comments
 	$("#commentForm").validate({

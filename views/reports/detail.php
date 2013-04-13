@@ -186,7 +186,7 @@
 
 	<div class="right-col">
 
-		<div class="report-media-box-content">
+	<?php /*	<div class="report-media-box-content">
 
 			<div id="report-map" class="report-map">
 				<div class="map-holder" id="map"></div>
@@ -199,7 +199,7 @@
         <div style="clear:both"></div>
 			</div>
 		</div>
-
+	*/ ?>
 		<?php
 			// Action::report_view_sidebar - This gives plugins the ability to insert into the sidebar (below the map and above additional reports)
 			Event::run('ushahidi_action.report_view_sidebar', $incident_id);
