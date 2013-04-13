@@ -1,6 +1,7 @@
 #page, div.rapidxwpr, #map {
   width:100%;
   border:none;
+	background:#fff;
 }
 
 div#header {
