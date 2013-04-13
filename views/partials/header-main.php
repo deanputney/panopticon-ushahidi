@@ -44,15 +44,19 @@
       
       <div id="panel-wrapper" class="open">
         <ul id="panel-tabs">
-          <li class="panel-submit"><a href="#submit">Submit</a></li><li class="panel-pins"><a href="#pins">Pins</a></li><li class="panel-contact"><a href="#contact">Contact</a></li>
+          <li class="panel-submit"><a href="#submit">Submit</a></li><li class="panel-pins"><a href="#pins">Pins</a></li><li class="panel-contact"><a href="#contact">Contact</a></li><li class="panel-info"><a href="#">Info</a></li>
         </ul>
         <div id="submit-panel" class="panel">
           <iframe name="reports" src="<?php echo url::site();?>reports/submit?panel" frameborder="0" ></iframe>
         </div>
         <div id="pins-panel" class="panel">          
-          <iframe src="<?php echo url::site();?>reports?panel" frameborder="0" ></iframe>
+          <iframe name="pins" src="<?php echo url::site();?>reports?panel" frameborder="0" ></iframe>
         </div>
         <div id="contact-panel" class="panel">
           <iframe src="<?php echo url::site();?>contact?panel" frameborder="0" ></iframe>
+        </div>
+        <div id="info-panel" class="panel">
+          <div id="info-close" class="olPopupCloseBox"></div>
+          <iframe frameborder="0" ></iframe>
         </div>
       </div>
