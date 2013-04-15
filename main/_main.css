@@ -225,3 +225,12 @@ ul.category-filters li a:hover, ul.category-filters li a.active {
 ul.category-filters li.child{
     display:none;
 }
+
+div#mapFilters{
+  width: 285px;
+  padding: 0px;
+	position: absolute;
+	top: 60px;
+	left: 52px;
+	z-index: 1;
+}
