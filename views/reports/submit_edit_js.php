@@ -13,7 +13,8 @@
  * @copyright  Ushahidi - http://www.ushahidi.com
  * @license    http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License (LGPL) 
  */
-?>
+
+if (!count($_POST)) : ?>
 		var map;
 		var thisLayer;
 		var proj_4326 = new OpenLayers.Projection('EPSG:4326');
@@ -649,6 +650,27 @@
 				}
 			});
 
+			// fake AJAX form
+			var form = $('form').attr({ target: 'output' });
+			var iframe = $('<iframe />').attr({ name: 'output', id: 'submit-output', src: 'about:blank' });
+			form.append(iframe);
+			form.on('submit', function() {
+				$('.btn_submit').parent().addClass('loading');
+			});
+			
+			iframe.load(function() {
+				$('.btn_submit').parent().removeClass('loading');
+
+				var iframe = $(this).contents();
+				var box = $('.big-block .red-box:first, .big-block .green-box:first', iframe).clone(true);
+				if (!box.length) return;
+
+				$('.big-block .red-box, .big-block .green-box').remove();
+				box.find('.thanks_msg').remove();
+				box.insertAfter('.big-block h1:first');
+				$('html, body').animate({ scrollTop: 0 }, 500);
+			});
+
 		});
 		
 		function addFormField(div, field, hidden_id, field_type) {
@@ -947,3 +969,4 @@
 				}
 			});
 		}
+<? endif; ?>

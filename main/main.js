@@ -93,7 +93,8 @@ jQuery(document).ready(function($) {
 		// Hide all
 		$('#panel-wrapper .panel').hide();
 
-		lastPanel = $('#panel-tabs li.active').removeClass('active').attr('class').match(/panel-(\w+)/);
+		lastPanel = $('#panel-tabs li.active').removeClass('active');
+		if (lastPanel.length) lastPanel = lastPanel.attr('class').match(/panel-(\w+)/);
 		panelName = li.attr('class').match(/panel-(\w+)/);
 
 		if (panelName[1] == 'submit') {
@@ -102,7 +103,7 @@ jQuery(document).ready(function($) {
 				window.setTimeout(function() { window.reports.map.baseLayer.redraw(); }, 500);
 			}
 		} else if (lastPanel[1] == 'submit') {
-			map._olMap.setCenter([window.reports.map.center.lon, window.reports.map.center.lat], window.reports.map.zoom);
+			if (window.reports.map) map._olMap.setCenter([window.reports.map.center.lon, window.reports.map.center.lat], window.reports.map.zoom);
 		}
 
 		$('#' + panelName[1] + '-panel').show(); // Show clicked

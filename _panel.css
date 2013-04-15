@@ -50,3 +50,14 @@ body.page-reports {
 	margin: 0;
 	width: auto;
 }
+
+#submit-output {
+  border: none;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.report_row.loading {
+	background: url(images/loading-animation_18x18.gif) 80px 20px no-repeat;
+}
