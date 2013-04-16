@@ -166,7 +166,7 @@ div.cat-filters{
 		text-transform: uppercase;
 		margin: 0 0 0px 0;
 		padding: 5px;
-		background: #fff;
+    background: rgba(255,255,255,0.7);
 		width: 175px;
 }
 
@@ -231,6 +231,17 @@ div#mapFilters{
   padding: 0px;
 	position: absolute;
 	top: 60px;
-	left: 52px;
+	left: 11px;
 	z-index: 1;
+}
+
+#category_switch {
+  display: none;
+}
+
+div#mapFilters:hover #category_switch {
+  display: block;
+}
+div#mapFilters:hover div.cat-filters {
+  background: #fff;
 }
