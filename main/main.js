@@ -65,8 +65,7 @@ jQuery(document).ready(function($) {
 
 	// Hide panel if #panel-closed
 	if (document.location.hash == '#panel-closed')
-		$('#panel-wrapper').removeClass('open').addClass('closed');
-		
+		closePanel();
 		
 	// Show panel on tab click
 	$('#panel-tabs li a').click(function() {
@@ -82,11 +81,7 @@ jQuery(document).ready(function($) {
 			$('#mapStatus, #mapControls, .big-map').addClass('panel-open');
 			setTimeout('drawWindow();', 200);
 		} else if (li.hasClass('active')) { // Close panel
-			wrapper.removeClass('open').addClass('closed');
-			document.location.hash = 'panel-closed';
-			$('.big-map').css('width', '100%');
-			updateMapsSize();
-			$('#mapStatus, #mapControls, .big-map').removeClass('panel-open');
+			closePanel();
 			return;
 		}
 
@@ -113,26 +108,39 @@ jQuery(document).ready(function($) {
 	});
 
 	$('#info-close').click(function() {
-		document.location.hash = 'pins';
 		$('#panel-tabs .panel-info a').css({ display: 'none' }).click();
 		$('#panel-tabs .panel-pins a').click();
+		document.location.hash = 'pins';
 	});
 
 	$('#map')
 		.observe('childlist', '#chicken', function(record) {
-		$('#chicken .infowindow_meta a:first, #chicken, .infowindow_list a:first').click(function() {
-			var href  = $(this).attr('href'),
-			    panel = (href.match(/\?/)) ? '&panel' : '?panel';
-
-			$('#panel-tabs .panel-info:not(.active) a').css({ display: 'block' }).click();
-			$('#info-panel iframe').attr({
-				src: href + panel
-			});
-			return false;
+			$('#chicken .infowindow_meta a:first, #chicken, .infowindow_list a:first').click(reportClick);
 		});
 
-	});
+	if ( document.location.hash.match(/^#reports\//) )
+		reportClick(document.location.protocol + '//' + document.location.host + '/' + document.location.hash.substr(1));
 
+	function reportClick(href) {
+		var href  = (href && typeof href == 'object') ? $(this).attr('href') : href,
+		    panel = (href.match(/\?/)) ? '&panel' : '?panel';
+
+		document.location.hash = href.replace(/^https?:\/\/.*?\//, '');
+
+		$('#panel-tabs .panel-info:not(.active) a').css({ display: 'block' }).click();
+		$('#info-panel iframe').attr({
+			src: href + panel
+		});
+		return false;
+	}
+
+	function closePanel() {
+		$('#panel-wrapper').removeClass('open').addClass('closed');
+		document.location.hash = 'panel-closed';
+		$('.big-map').css('width', '100%');
+		updateMapsSize();
+		$('#mapStatus, #mapControls, .big-map').removeClass('panel-open');
+	}
 // end document.ready()
 });
 
