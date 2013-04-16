@@ -121,9 +121,12 @@ jQuery(document).ready(function($) {
 	$('#map')
 		.observe('childlist', '#chicken', function(record) {
 		$('#chicken .infowindow_meta a:first, #chicken, .infowindow_list a:first').click(function() {
-			$('#panel-tabs .panel-info a').css({ display: 'block' }).click();
+			var href  = $(this).attr('href'),
+			    panel = (href.match(/\?/)) ? '&panel' : '?panel';
+
+			$('#panel-tabs .panel-info:not(.active) a').css({ display: 'block' }).click();
 			$('#info-panel iframe').attr({
-				src: $(this).attr('href') + '?panel'
+				src: href + panel
 			});
 			return false;
 		});
