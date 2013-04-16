@@ -20,6 +20,9 @@
 Ushahidi.baseURL = "<?php echo url::site(); ?>";
 
 jQuery(window).load(function() {
+	if (window != window.top && !document.location.href.match(/(\?|&)panel$/)) {
+		$('<link rel="stylesheet" type="text/css" href="/themes/panopticon/_panel.css" >').appendTo('head');
+	}
 
 	<?php echo map::layers_js(FALSE); ?>
 

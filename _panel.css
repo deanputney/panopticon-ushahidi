@@ -62,7 +62,11 @@ body.page-reports {
 	background: url(images/loading-animation_18x18.gif) 80px 20px no-repeat;
 }
 
-#main .left-col, #main .right-col {
+div.rapidxwpr, #main .left-col, #main .right-col {
 	float: none;
-	width: 100%;
+	width: auto;
+}
+
+#header_nav, #header, #mainmenu {
+	display: none;
 }
