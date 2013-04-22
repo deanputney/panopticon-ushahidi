@@ -141,6 +141,22 @@ jQuery(document).ready(function($) {
 		updateMapsSize();
 		$('#mapStatus, #mapControls, .big-map').removeClass('panel-open');
 	}
+
+	// Intro modal
+	$('#intro').click(function() {
+		$('#intro').fadeOut('fast');
+	})
+
+	$('#intro-video .placeholder').click(function() {
+		var vid = $('#intro-video .vid');
+		$(this).hide();
+		vid.show().attr({
+			src: vid.attr('data-videoUrl')
+		});
+
+		return false;
+	})
+
 // end document.ready()
 });
 

@@ -144,3 +144,5 @@
     </div>
   
   <div id="reportMap" class="report_map"></div>
+
+<?php include('intro.php'); ?>

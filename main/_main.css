@@ -245,3 +245,75 @@ div#mapFilters:hover #category_switch {
 div#mapFilters:hover div.cat-filters {
   background: #fff;
 }
+
+#intro {
+  z-index: 9001;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  overflow: auto
+}
+
+#intro .inner {
+  margin: 50px auto 0 auto;
+  max-width: 800px;
+}
+
+#intro .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 56pt;
+  color: #aaa;
+}
+
+#intro .close:hover {
+  color: #fff;
+}
+
+#intro h1 {
+  color: #eef;
+  font-size: 48pt;
+  text-align: center;
+}
+
+#intro-video {
+  width: 700px;
+  margin: 40px auto;
+}
+
+#intro .placeholder, #intro .vid {
+  cursor: pointer;
+  width: 700px;
+  height: 394px;
+}
+
+#intro .vid {
+  display: none;
+}
+
+#intro .login {
+  margin-bottom: 10px;
+}
+
+#intro .login button {
+  border: none;
+  background: url(http://i.imgur.com/1Kd07MV.png);
+  width: 150px;
+  height: 22px;
+  margin-right: 20px;
+}
+
+#intro .login button.facebook {
+  background-position: -139px -87px;
+}
+
+#intro .login button.twitter {
+  background-position: -139px -37px;
+}
